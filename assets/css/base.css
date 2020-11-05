@@ -1,0 +1,218 @@
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: rgba(0, 0, 0, 0.8);
+    --primary-color: #F84A2E;
+    --border-color: #F2F2F2;
+    --height-nav: 34px;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6, p, span {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    background-color: #F5F5F5;
+}
+
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+ 
+.grid__full-width {
+    width: 100%;
+} 
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -12px;
+    margin-right: -12px;
+}
+
+.grid__column-2 {
+    width: 16.6667%;
+    height: 300px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.grid__column-10 {
+    height: 300px;
+    width: 83.3333%;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.display-block {
+    display: block !important;
+}
+
+.display-none {
+    display: none !important;
+}
+
+.cursor-default {
+    cursor: default !important;
+}
+
+.btn {
+    border: none;
+    background-color: #fff;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 16px;
+    border-radius: 2px;
+    cursor: pointer;
+    outline: none;
+}
+.btn.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn.btn-primary:hover {
+    background-color: #fc583f;
+}
+
+.modal-wrapper {
+    display: none;
+    animation: fadeIn ease-in 0.1s;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+}
+
+.modal__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+.modal__body {
+    background-color: var(--white-color);
+    margin: auto;
+    border-radius: 2px;
+}
+
+/* animation */
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* NEXT , PREV BTN LIST */
+
+.list-btn {
+    outline: none;
+    border: none;
+    width: 24px;
+    height: 24px;
+    background-color: var(--white-color);
+    border-radius: 24px;
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.list-btn:hover {
+    animation: zoomInBtn ease-in-out 0s;
+    transform-origin: 22px 22px;
+    width: 44px;
+    height: 44px;
+    border-radius: 44px;
+    font-size: 2rem;
+}
+
+@keyframes zoomInBtn {
+    from {
+        width: 24px;
+        height: 24px;
+        border-radius: 24px;
+        font-size: 1.4rem;
+    }
+    to {
+        width: 44px;
+        height: 44px;
+        border-radius: 44px;
+        font-size: 2rem;
+    }
+}
+
+.list-btn.btn-prev {
+    position: absolute;
+    top: calc(50% + 19px);
+    left: -10px;
+}
+
+
+.list-btn.btn-prev:hover {
+    top: calc(50% + 9px);
+    left: -20px;
+}
+
+.list-btn.btn-next {
+    position: absolute;
+    top: calc(50% + 19px);
+    right: -10px;
+}
+.list-btn.btn-next:hover {
+    top: calc(50% + 9px);
+    right: -20px;
+}
